@@ -1,0 +1,199 @@
+{
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "Positive Technologies Application Inspector",
+        "rules" : [ {
+          "id" : "ptai-FD7C9BDC93C1284DA6A20F3186AF1042",
+          "shortDescription" : {
+            "text" : "Cross-Site Scripting"
+          },
+          "fullDescription" : {
+            "text" : "The application does not sufficiently validate user input that allows attackers to to execute arbitrary code in the context of victim's browser bypassing the Same Origin Policy (SOP)."
+          }
+        } ]
+      }
+    },
+    "results" : [ {
+      "ruleId" : "ptai-FD7C9BDC93C1284DA6A20F3186AF1042",
+      "ruleIndex" : 0,
+      "message" : {
+        "text" : "Cross-Site Scripting"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "xss.php",
+            "uriBaseId" : "SRCROOT"
+          },
+          "region" : {
+            "startLine" : 5,
+            "endLine" : 5,
+            "snippet" : {
+              "text" : "echo $a . $b;"
+            }
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "xss.php",
+                  "uriBaseId" : "SRCROOT"
+                },
+                "region" : {
+                  "startLine" : 1,
+                  "endLine" : 1,
+                  "snippet" : {
+                    "text" : "<?php"
+                  }
+                }
+              },
+              "message" : {
+                "text" : "Entry point"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "xss.php",
+                  "uriBaseId" : "SRCROOT"
+                },
+                "region" : {
+                  "startLine" : 2,
+                  "endLine" : 2,
+                  "snippet" : {
+                    "text" : "$a = $_GET['a'];"
+                  }
+                }
+              },
+              "message" : {
+                "text" : "Taint data entry (source)"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "xss.php",
+                  "uriBaseId" : "SRCROOT"
+                },
+                "region" : {
+                  "startLine" : 5,
+                  "endLine" : 5,
+                  "snippet" : {
+                    "text" : "echo $a . $b;"
+                  }
+                }
+              },
+              "message" : {
+                "text" : "Exit point (sink)"
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "ptai-FD7C9BDC93C1284DA6A20F3186AF1042",
+      "ruleIndex" : 0,
+      "message" : {
+        "text" : "Cross-Site Scripting"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "xss.php",
+            "uriBaseId" : "SRCROOT"
+          },
+          "region" : {
+            "startLine" : 5,
+            "endLine" : 5,
+            "snippet" : {
+              "text" : "echo $a . $b;"
+            }
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "xss.php",
+                  "uriBaseId" : "SRCROOT"
+                },
+                "region" : {
+                  "startLine" : 1,
+                  "endLine" : 1,
+                  "snippet" : {
+                    "text" : "<?php"
+                  }
+                }
+              },
+              "message" : {
+                "text" : "Entry point"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "xss.php",
+                  "uriBaseId" : "SRCROOT"
+                },
+                "region" : {
+                  "startLine" : 3,
+                  "endLine" : 3,
+                  "snippet" : {
+                    "text" : "$b = $_GET['b'];"
+                  }
+                }
+              },
+              "message" : {
+                "text" : "Taint data entry (source)"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "xss.php",
+                  "uriBaseId" : "SRCROOT"
+                },
+                "region" : {
+                  "startLine" : 5,
+                  "endLine" : 5,
+                  "snippet" : {
+                    "text" : "echo $a . $b;"
+                  }
+                }
+              },
+              "message" : {
+                "text" : "Exit point (sink)"
+              }
+            }
+          } ]
+        } ]
+      } ]
+    } ],
+    "translations" : [ {
+      "name" : "Positive Technologies Application Inspector",
+      "rules" : [ {
+        "id" : "ptai-FD7C9BDC93C1284DA6A20F3186AF1042",
+        "shortDescription" : {
+          "text" : "Межсайтовое выполнение сценариев"
+        },
+        "fullDescription" : {
+          "text" : "В приложении осуществляется недостаточная обработка потенциально опасных данных, что позволяет выполнить произвольный код в браузере пользователя в обход политики единого источника (SOP)."
+        }
+      } ],
+      "language" : "ru-RU"
+    } ]
+  } ]
+}
