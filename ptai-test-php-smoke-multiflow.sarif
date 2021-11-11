@@ -116,10 +116,10 @@
                   "uriBaseId" : "SRCROOT"
                 },
                 "region" : {
-                  "startLine" : 2,
-                  "endLine" : 2,
+                  "startLine" : 3,
+                  "endLine" : 3,
                   "snippet" : {
-                    "text" : "$a = $_GET['a'];"
+                    "text" : "$b = $_GET['b'];"
                   }
                 }
               },
@@ -147,31 +147,7 @@
               }
             }
           } ]
-        } ]
-      } ]
-    }, {
-      "ruleId" : "ptai-FD7C9BDC93C1284DA6A20F3186AF1042",
-      "ruleIndex" : 0,
-      "message" : {
-        "text" : "Cross-Site Scripting"
-      },
-      "locations" : [ {
-        "physicalLocation" : {
-          "artifactLocation" : {
-            "uri" : "xss.php",
-            "uriBaseId" : "SRCROOT"
-          },
-          "region" : {
-            "startLine" : 5,
-            "endLine" : 5,
-            "snippet" : {
-              "text" : "echo $a . $b;"
-            }
-          }
-        }
-      } ],
-      "codeFlows" : [ {
-        "threadFlows" : [ {
+        }, {
           "locations" : [ {
             "location" : {
               "physicalLocation" : {
@@ -199,10 +175,10 @@
                   "uriBaseId" : "SRCROOT"
                 },
                 "region" : {
-                  "startLine" : 3,
-                  "endLine" : 3,
+                  "startLine" : 2,
+                  "endLine" : 2,
                   "snippet" : {
-                    "text" : "$b = $_GET['b'];"
+                    "text" : "$a = $_GET['a'];"
                   }
                 }
               },
