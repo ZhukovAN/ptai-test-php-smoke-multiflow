@@ -6,6 +6,7 @@
         "name" : "Positive Technologies Application Inspector",
         "rules" : [ {
           "id" : "ptai-FD7C9BDC93C1284DA6A20F3186AF1042",
+          "name" : "Cross-site scripting name",
           "shortDescription" : {
             "text" : "Cross-Site Scripting"
           },
@@ -116,10 +117,10 @@
                   "uriBaseId" : "SRCROOT"
                 },
                 "region" : {
-                  "startLine" : 3,
-                  "endLine" : 3,
+                  "startLine" : 2,
+                  "endLine" : 2,
                   "snippet" : {
-                    "text" : "$b = $_GET['b'];"
+                    "text" : "$a = $_GET['a'];"
                   }
                 }
               },
@@ -147,7 +148,9 @@
               }
             }
           } ]
-        }, {
+        } ]
+      }, {
+        "threadFlows" : [ {
           "locations" : [ {
             "location" : {
               "physicalLocation" : {
