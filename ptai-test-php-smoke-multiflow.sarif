@@ -4,72 +4,23 @@
     "tool" : {
       "driver" : {
         "name" : "Positive Technologies Application Inspector",
+        "organization" : "Positive Technologies",
+        "informationUri" : "https://www.ptsecurity.com/ww-en/products/ai/",
         "rules" : [ {
-          "id" : "ptai-FD7C9BDC93C1284DA6A20F3186AF1042",
-          "name" : "Cross-site scripting name",
-          "shortDescription" : {
-            "text" : "Cross-Site Scripting"
-          },
-		  "relationships": [
-								{
-									"kinds": [
-										"superset"
-									],
-									"target": {
-										"guid": "6bd55435-166c-3594-bc06-5e0dea916067",
-										"id": "89",
-										"toolComponent": {
-											"guid": "f2856fc0-85b7-373f-83e7-6f8582243547",
-											"name": "CWE"
-										}
-									}
-								}
-							],
+          "id" : "Cross-site Scripting",
+          "name" : "Cross-Site Scripting",
           "fullDescription" : {
             "text" : "The application does not sufficiently validate user input that allows attackers to to execute arbitrary code in the context of victim's browser bypassing the Same Origin Policy (SOP)."
+          },
+          "properties" : {
+            "tags" : [ "vulnerability" ]
           }
-        } ],
-		"supportedTaxonomies": [
-						{
-							"guid": "f2856fc0-85b7-373f-83e7-6f8582243547",
-							"name": "CWE"
-						}
-					]
+        } ]
       }
     },
-	"taxonomies": [
-				{
-					"downloadUri": "https://cwe.mitre.org/data/xml/cwec_v4.4.xml.zip",
-					"guid": "f2856fc0-85b7-373f-83e7-6f8582243547",
-					"informationUri": "https://cwe.mitre.org/data/published/cwe_v4.4.pdf/",
-					"isComprehensive": true,
-					"language": "en",
-					"minimumRequiredLocalizedDataSemanticVersion": "4.4",
-					"name": "CWE",
-					"organization": "MITRE",
-					"releaseDateUtc": "2021-03-15",
-					"shortDescription": {
-						"text": "The MITRE Common Weakness Enumeration"
-					},
-					"taxa": [
-						{
-							"fullDescription": {
-								"text": "The software constructs all or part of an SQL command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended SQL command when it is sent to a downstream component."
-							},
-							"guid": "6bd55435-166c-3594-bc06-5e0dea916067",
-							"helpUri": "https://cwe.mitre.org/data/definitions/89.html",
-							"id": "89",
-							"shortDescription": {
-								"text": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
-							}
-						}
-					],
-					"version": "4.4"
-				}
-			],
     "results" : [ {
-      "ruleId" : "ptai-FD7C9BDC93C1284DA6A20F3186AF1042",
-      "ruleIndex" : 0,
+      "ruleId" : "Cross-site Scripting",
+      "kind" : "open",
       "message" : {
         "text" : "Cross-Site Scripting"
       },
@@ -125,7 +76,7 @@
                 }
               },
               "message" : {
-                "text" : "Taint data entry (source)"
+                "text" : "Taint data entry"
               }
             }
           }, {
@@ -144,7 +95,7 @@
                 }
               },
               "message" : {
-                "text" : "Exit point (sink)"
+                "text" : "Exit point"
               }
             }
           } ]
@@ -186,7 +137,7 @@
                 }
               },
               "message" : {
-                "text" : "Taint data entry (source)"
+                "text" : "Taint data entry"
               }
             }
           }, {
@@ -205,22 +156,26 @@
                 }
               },
               "message" : {
-                "text" : "Exit point (sink)"
+                "text" : "Exit point"
               }
             }
           } ]
         } ]
-      } ]
+      } ],
+      "properties" : {
+        "tags" : [ "VULNERABILITY" ]
+      }
     } ],
     "translations" : [ {
       "name" : "Positive Technologies Application Inspector",
       "rules" : [ {
-        "id" : "ptai-FD7C9BDC93C1284DA6A20F3186AF1042",
-        "shortDescription" : {
-          "text" : "Межсайтовое выполнение сценариев"
-        },
+        "id" : "Cross-site Scripting",
+        "name" : "Межсайтовое выполнение сценариев",
         "fullDescription" : {
           "text" : "В приложении осуществляется недостаточная обработка потенциально опасных данных, что позволяет выполнить произвольный код в браузере пользователя в обход политики единого источника (SOP)."
+        },
+        "properties" : {
+          "tags" : [ "vulnerability" ]
         }
       } ],
       "language" : "ru-RU"
